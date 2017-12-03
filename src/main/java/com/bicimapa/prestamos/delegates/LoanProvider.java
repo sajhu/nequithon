@@ -65,7 +65,7 @@ public class LoanProvider {
 		ArrayList<Pair<String, String>> milestones = new ArrayList<>();
 		milestones.add(new ImmutablePair<>("", "Conseguiste los "+ Utils.getPrettyAmount(currentLoan.getPayments().get(0).getShouldPay()) +" <span class=\"badge badge-success badge-pill\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></span>"));
 		milestones.add(new ImmutablePair<>("", "Conseguiste los "+ Utils.getPrettyAmount(currentLoan.getPayments().get(1).getShouldPay()) +" <span class=\"badge badge-success badge-pill\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></span>"));
-		milestones.add(new ImmutablePair<>("list-group-item-danger", "Recarga "+ Utils.getPrettyAmount(currentLoan.getPayments().get(2).getMissing()) +" para llegar a cumplir este reto <span class=\"badge badge-danger badge-pill\"><i class=\"fa fa-warning\" aria-hidden=\"true\"></i></span>"));
+		milestones.add(new ImmutablePair<>("list-group-item-danger", "¡Recarga a "+ Utils.getPrettyAmount(currentLoan.getPayments().get(2).getMissing()) +"! <span class=\"badge badge-danger badge-pill\"><i class=\"fa fa-warning\" aria-hidden=\"true\"></i></span>"));
 		milestones.add(new ImmutablePair<>("disabled", "<i class=\"fa fa-lock text-size-l\" aria-hidden=\"true\"></i> Paga la meta anterior primero"));
 		milestones.add(new ImmutablePair<>("disabled text-size-l", "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"));
 		

@@ -47,7 +47,7 @@
             </div>
             <div class="form-group col-md-6">
               <label for="inputAmount">¿Cuánto? (Máx 1'000.000)</label>
-              <input type="number" class="form-control" id="inputAmount" placeholder="$80.000" th:field="*{amount}" required="requiered" />
+              <input type="number" class="form-control" id="inputAmount" min="50000" max="1000000" placeholder="$80.000" th:field="*{amount}" required="requiered" />
             </div>
           </div>
           <div class="form-group">
