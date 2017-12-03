@@ -16,7 +16,7 @@
 -->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Nequi</title>
+    <title>Auxilio</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Bootstrap CSS -->
@@ -24,67 +24,94 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
-
+   <!-- <link rel="stylesheet" type="text/css" href="../static/styles/styles.css"/> -->
 </head>
 <body>
+<nav class="navbar text-light bg-medianoche justify-content-between">
+  <p class='text-size-l'><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></p>
+  <p>Tu auxilio</p>
+  <p class='text-size-l'><i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+</nav>
 <div class="container">
-	<br />
-    <div class="page-header">
-        <h1>Mi Préstamo</h1>
-    </div>
-
-    <div class="row">
-      <div class="col-12">
-        <h3 class='text-center'>Progreso</h3>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-12">
-        <div class="card">
-          <br/>
-          <div class="row">
-            <div class="col-2">
-              <p class='text-size-xs text-right'>0%</p>
-            </div>
-            <div class="col-8">
-              <div class="progress">
-                <div class="progress-bar bg-danger" role="progressbar" th:style="'width: '+ ${progress} +'%'" th:attr="aria-valuenow=${progress}" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="spacer-m"></div>
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="card box-shadow no-border">
+        <br/>
+        <div class="row">
+          <div class="col-12">
+            <p class='text-center'>Abona <span>$2.000</span> hoy para no colgarte! </p>
+            <!-- <p class='text-center'> ¡Vas <span>$10.000</span> adelante de la meta! 💪</p> -->
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-11">
+            <div class="row justify-content-between">
+              <div class="col-6">
+                <p class='text-size-xs text-left' th:text="${paid}">$20.000</p>
+              </div>
+              <div class="col-6">
+                <p class='text-size-xs text-right' th:text="${amount}">$600.000</p>
               </div>
             </div>
-            <div class="col-2">
-              <p class='text-size-xs text-left'>100%</p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-11">
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" th:style="'width: '+ ${progress} +'%'" th:attr="aria-valuenow=${progress}" aria-valuemin="0" aria-valuemax="100"></div> <br/>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12">
-              <p>Tienes <span th:text="${giversSize}">?</span> angeles</p>
-              <p class='text-center'>Abona <span>$2.000</span> hoy para no colgarte! </p>
-              <p class='text-center'> ¡Vas <span>$10.000</span> adelante de la meta! 💪</p>
-            </div>
+          <div class="spacer-m"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FUNDERS -->
+  <div class="spacer-m"></div>
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="card box-shadow no-border">
+        <div class="row">
+          <div class="col-12">
+            <p class ='text-center'><br/>Tus <span th:text="${giversSize}">?</span> desembaladores son</p>
+            <!-- <p class='text-center'> ¡Vas <span>$10.000</span> adelante de la meta! 💪</p> -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p class='text-center'> <img class='img-badge' src="https://image.flaticon.com/icons/svg/340/340341.svg" alt="badge"/> </p>
+            <p class='text-size-xs text-center'>Tía Dora</p>
+          </div>
+          <div class="col-4">
+            <p class='text-center'> <img class='img-badge' src="https://image.flaticon.com/icons/svg/340/340331.svg" alt="badge"/> </p>
+            <p class='text-size-xs text-center'>Papu</p>
+          </div>
+          <div class="col-4">
+            <p class='text-center'> <img class='img-badge' src="https://image.flaticon.com/icons/svg/340/340339.svg" alt="badge"/> </p>
+            <p class='text-size-xs text-center'>Hermanita</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12">
-        <br/><h3 class='text-center'>Actividades</h3><br/>
-      </div>
-    </div>
+  </div>
+  <div class="spacer-m"></div>
+  <!-- ACTIVITY -->
     <div class="row">
       <div class="col-3">
         <ul class="list-group">
-          <li class="list-group-item list-group-item-success height-large text-size-xs text-center" ><th:block th:text="${startDate}"></th:block></li>
-          <li class="list-group-item list-group-item-success height-large text-size-xs text-center" ><th:block th:text="${startDate}"></th:block></li>
-          <li class="list-group-item  height-large text-size-xs text-center" 
+          <li class="list-group-item list-group-item-success height-large text-size-xs text-center box-shadow" ><th:block th:text="${startDate}"></th:block></li>
+          <li class="list-group-item list-group-item-success height-large text-size-xs text-center box-shadow" ><th:block th:text="${startDate}"></th:block></li>
+          <li class="list-group-item  height-large text-size-xs text-center box-shadow"
           th:each="payment : ${payments}" th:text="${payment.prettyDate}">date</li>
         </ul>
       </div>
       <div class="col-9">
         <ul class="list-group">
-          <li href="#" class="list-group-item d-flex justify-content-between align-items-center height-large">Consigue tus ángeles 😇 <span class="badge badge-success badge-pill"><i class="fa fa-check" aria-hidden="true"></i></span></li>
-          <li href="#" class="list-group-item d-flex justify-content-between align-items-center height-large">Recibe la plata de tus ángeles <span class="badge badge-success badge-pill"><i class="fa fa-check" aria-hidden="true"></i></span></li>
-          
-          <li class="list-group-item d-flex justify-content-between align-items-center height-large "
+          <li href="#" class="list-group-item d-flex justify-content-between align-items-center height-large box-shadow">Consigue tus desembaladores <span class="badge badge-success badge-pill"><i class="fa fa-check" aria-hidden="true"></i></span></li>
+          <li href="#" class="list-group-item d-flex justify-content-between align-items-center height-large box-shadow">Recibe la plata de tus ángeles <span class="badge badge-success badge-pill"><i class="fa fa-check" aria-hidden="true"></i></span></li>
+
+          <li class="list-group-item d-flex justify-content-between align-items-center height-large box-shadow "
           th:each="milestone : ${currentMilestones}" th:classappend="${milestone.getLeft()}"><th:block th:utext="${milestone.getRight()}"></th:block></li>
           <!-- <a href="#" class="list-group-item height-large disabled">Terminaste! Agradece a tus ángeles 😇</a> -->
         </ul>

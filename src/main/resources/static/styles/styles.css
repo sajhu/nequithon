@@ -18,6 +18,13 @@ html, body{
 	height:0.1rem
 }
 
+.img-badge{
+	height:3rem;
+	width:auto;
+	display: block;
+  margin: 0 auto;
+}
+
 /*Text-size*/
 .text-size-xs {
 	font-size: 0.8rem;
@@ -40,8 +47,9 @@ html, body{
 .bg-guayaba {
 	background-color: #ff2f73;
 }
-
 .box-shadow{
+	box-shadow: 1px 1px 1px #2fcad7;
+}
+.no-border{
 	border: none;
-	 box-shadow: 1px 1px 1px #2fcad7;
 }
