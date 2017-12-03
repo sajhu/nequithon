@@ -1,7 +1,7 @@
 {
-  "name": "Spring Boot Heroku Demo",
+  "name": "Prestamos Solidarios",
   "description": "This is a small demo application for showing how to run a Spring Boot application on Heroku.",
-  "repository": "https://github.com/kissaten/spring-boot-heroku-demo",
+  "repository": "https://github.com/sajhu/nequithon",
   "image": "heroku/java",
   "addons": [ "heroku-postgresql" ]
 }
