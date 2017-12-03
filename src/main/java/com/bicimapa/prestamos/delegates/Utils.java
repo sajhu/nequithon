@@ -12,6 +12,7 @@ public class Utils {
 	}
 	
 	public static String getPrettyAmount(int amount) {
-		return "$" + String.format("%,d", amount).replace(",", ".");
+		int rounded = ((amount + 99) / 100 ) * 100;
+		return "$" + String.format("%,d", rounded).replace(",", ".");
 	}
 }
