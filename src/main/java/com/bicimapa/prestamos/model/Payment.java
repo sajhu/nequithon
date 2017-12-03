@@ -22,4 +22,8 @@ public class Payment {
 	public String getPrettyDate() {
 		return Utils.getPrettyDate(dueDate);
 	}
+	
+	public int getMissing() {
+		return shouldPay - paid;
+	}
 }

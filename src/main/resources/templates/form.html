@@ -8,7 +8,7 @@
 
       http://www.apache.org/licenses/LICENSE-2.0
 
-  Unless required by applicable law or agreed to in writing, software
+  Unless required="requiered" by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
@@ -16,7 +16,7 @@
 -->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Pedir Desembare</title>
+    <title>Pide un Desembare</title>
 
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -30,7 +30,7 @@
 <body>
 <nav class="navbar text-light bg-medianoche justify-content-between">
   <p class='text-size-l'><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></p>
-  <p>Pide auxilio</p>
+  <p>Pide un desembare</p>
   <p class='text-size-l'><i class="fa fa-chevron-down" aria-hidden="true"></i></p>
 </nav>
 <div class="container bg-aguamarica">
@@ -41,23 +41,23 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputReason">¿Por qué?</label>
-              <select id="inputReason" class="form-control" th:field="*{reason}">
+              <select id="inputReason" class="form-control" th:field="*{reason}" required="requiered">
               	<option th:each="reason : ${reasons}" th:value="${reason}" th:text="${reason}">?</option>
             </select>
             </div>
             <div class="form-group col-md-6">
               <label for="inputAmount">¿Cuánto? (Máx 1'000.000)</label>
-              <input type="number" class="form-control" id="inputAmount" placeholder="$80.000" th:field="*{amount}" />
+              <input type="number" class="form-control" id="inputAmount" placeholder="$80.000" th:field="*{amount}" required="requiered" />
             </div>
           </div>
           <div class="form-group">
             <label for="inputLoaners">¿Quienes son tus desembaladores?</label>
-            <input type="text" class="form-control" id="inputLoaners" placeholder="300 5566634" />
+            <input type="text" class="form-control" id="inputLoaners" placeholder="300 5566634" required="requiered" />
 
           </div>
           <div class="form-group">
             <label for="inputDeadline">¿Cuándo terminarías de pagar?</label>
-            <input type="date" class="form-control" id="inputDeadline" placeholder="Toca para seleccionar una fecha" th:value="*{finalDate}" th:field="*{finalDate}" />
+            <input type="date" class="form-control" id="inputDeadline" placeholder="Toca para seleccionar una fecha" th:value="*{finalDate}" th:field="*{finalDate}" required="requiered" />
           </div>
           <div class="form-row">
             <div class="form-group col-12">

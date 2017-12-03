@@ -12,6 +12,6 @@ public class Utils {
 	}
 	
 	public static String getPrettyAmount(int amount) {
-		return "$" + String.format("%.d", amount);
+		return "$" + String.format("%,d", amount).replace(",", ".");
 	}
 }

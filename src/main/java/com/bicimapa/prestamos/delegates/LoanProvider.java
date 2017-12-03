@@ -32,7 +32,6 @@ public class LoanProvider {
 			buildNewLoan();
 			logger.error("¡aguas, esa mierda está nula!");
 		}
-		System.out.println("consulta " + currentLoan);
 		
 		return currentLoan;
 	}
@@ -52,10 +51,8 @@ public class LoanProvider {
 		currentLoan.setPaid(33000);
 		currentLoan.setCreateDate(LocalDate.now());
 		currentLoan.setFinalDate(loanCreation.getFinalDate());
-		System.out.println("guardar " + currentLoan);
 
 		definePayments();
-		buildNewLoan();
 	}
 	
 	public int getCurrentProgress() {
@@ -64,10 +61,10 @@ public class LoanProvider {
 	
 	public ArrayList<Pair<String, String>> getCurrentMilestones() {
 		ArrayList<Pair<String, String>> milestones = new ArrayList<>();
-		milestones.add(new ImmutablePair<>("", "Llegaste a la marca <span class=\"badge badge-success badge-pill\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></span>"));
-		milestones.add(new ImmutablePair<>("", "Llegaste a la marca <span class=\"badge badge-success badge-pill\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></span>"));
-		milestones.add(new ImmutablePair<>("list-group-item-danger", "Opsie te falta <span class=\"badge badge-danger badge-pill\"><i class=\"fa fa-warning\" aria-hidden=\"true\"></i></span>"));
-		milestones.add(new ImmutablePair<>("disabled text-size-l", "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"));
+		milestones.add(new ImmutablePair<>("", "Conseguiste los "+ Utils.getPrettyAmount(currentLoan.getPayments().get(0).getShouldPay()) +" <span class=\"badge badge-success badge-pill\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></span>"));
+		milestones.add(new ImmutablePair<>("", "Conseguiste los "+ Utils.getPrettyAmount(currentLoan.getPayments().get(1).getShouldPay()) +" <span class=\"badge badge-success badge-pill\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></span>"));
+		milestones.add(new ImmutablePair<>("list-group-item-danger", "Recarga "+ Utils.getPrettyAmount(currentLoan.getPayments().get(2).getMissing()) +" para llegar a cumplir este reto <span class=\"badge badge-danger badge-pill\"><i class=\"fa fa-warning\" aria-hidden=\"true\"></i></span>"));
+		milestones.add(new ImmutablePair<>("disabled text-size-l", "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i> Termina el reto anterior para desbloquear"));
 		milestones.add(new ImmutablePair<>("disabled text-size-l", "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"));
 		
 		return milestones;
@@ -80,7 +77,7 @@ public class LoanProvider {
 		LocalDate dueDate = LocalDate.now();
 		ArrayList<Payment> payments = new ArrayList<>();
 		int accumulate = 0;
-		for (int i = 0; i < getCurrentLoan().getPeriods(); i++) {
+		for (int i = 1; i <= getCurrentLoan().getPeriods(); i++) {
 			int value = currentLoan.getPaymentAmountForPeriod(i);
 			dueDate = dueDate.plusDays(interval);
 			accumulate += value;
@@ -93,7 +90,6 @@ public class LoanProvider {
 			payments.add(payment);
 		}
 		currentLoan.setPayments(payments);
-		System.out.println(payments);
 	}
 	
 	private void buildNewLoan() { 

@@ -16,7 +16,7 @@
 -->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Auxilio</title>
+    <title>Mi Desembare</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Bootstrap CSS -->
@@ -103,16 +103,16 @@
           <li class="list-group-item list-group-item-success height-large text-size-xs text-center box-shadow" ><th:block th:text="${startDate}"></th:block></li>
           <li class="list-group-item list-group-item-success height-large text-size-xs text-center box-shadow" ><th:block th:text="${startDate}"></th:block></li>
           <li class="list-group-item  height-large text-size-xs text-center box-shadow"
-          th:each="payment : ${payments}" th:text="${payment.prettyDate}">date</li>
+          	th:each="payment : ${payments}" th:text="${payment.prettyDate}">date</li>
         </ul>
       </div>
       <div class="col-9">
         <ul class="list-group">
-          <li href="#" class="list-group-item d-flex justify-content-between align-items-center height-large box-shadow">Consigue tus desembaladores <span class="badge badge-success badge-pill"><i class="fa fa-check" aria-hidden="true"></i></span></li>
-          <li href="#" class="list-group-item d-flex justify-content-between align-items-center height-large box-shadow">Recibe la plata de tus ángeles <span class="badge badge-success badge-pill"><i class="fa fa-check" aria-hidden="true"></i></span></li>
+          <li class="list-group-item d-flex justify-content-between align-items-center height-large box-shadow">Consigue tus desembaladores <span class="badge badge-success badge-pill"><i class="fa fa-check" aria-hidden="true"></i></span></li>
+          <li class="list-group-item d-flex justify-content-between align-items-center height-large box-shadow">Recibe la plata de tus ángeles <span class="badge badge-success badge-pill"><i class="fa fa-check" aria-hidden="true"></i></span></li>
 
           <li class="list-group-item d-flex justify-content-between align-items-center height-large box-shadow "
-          th:each="milestone : ${currentMilestones}" th:classappend="${milestone.getLeft()}"><th:block th:utext="${milestone.getRight()}"></th:block></li>
+          	th:each="milestone : ${currentMilestones}" th:classappend="${milestone.getLeft()}"><th:block th:utext="${milestone.getRight()}"></th:block></li>
           <!-- <a href="#" class="list-group-item height-large disabled">Terminaste! Agradece a tus ángeles 😇</a> -->
         </ul>
       </div>

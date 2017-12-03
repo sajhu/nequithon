@@ -55,7 +55,7 @@ public class LoanCreationController {
         System.out.println(result.getErrorCount());
         		provider.save(loanCreation);
         
-        return "paying";
+        return "redirect:/heropath";
     }
     
     private ArrayList<String> getReasons() {
