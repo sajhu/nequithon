@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.bicimapa.prestamos.model.Loan;
 import com.bicimapa.prestamos.model.Stage;
 import com.bicimapa.prestamos.repoository.LoanProvider;
+import com.bicimapa.prestamos.repoository.Utils;
 
 @Controller
 @RequestMapping("/heropath")
@@ -35,6 +36,9 @@ public class HeroPathController {
 	    	} else if(Stage.PAYING.equals(loan.getStage())) {
 	    		model.addAttribute("progress", provider.getCurrentProgress());
 	    		model.addAttribute("payments", provider.getCurrentLoan().getPayments());
+	    		model.addAttribute("startDate", Utils.getPrettyDate(provider.getCurrentLoan().getCreateDate()));
+	    		model.addAttribute("currentMilestones", provider.getCurrentMilestones());
+	    		
 	    		return "paying";
 	    	} else if(Stage.FINISHED.equals(loan.getStage())) {
 	    		return "finished";
