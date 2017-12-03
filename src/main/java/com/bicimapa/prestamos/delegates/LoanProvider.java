@@ -29,9 +29,11 @@ public class LoanProvider {
 	
 	public Loan getCurrentLoan() {
 		if(currentLoan == null) {
+			buildNewLoan();
 			logger.error("¡aguas, esa mierda está nula!");
 		}
-		System.out.println(currentLoan);
+		System.out.println("consulta " + currentLoan);
+		
 		return currentLoan;
 	}
 	
@@ -50,8 +52,10 @@ public class LoanProvider {
 		currentLoan.setPaid(33000);
 		currentLoan.setCreateDate(LocalDate.now());
 		currentLoan.setFinalDate(loanCreation.getFinalDate());
-		
+		System.out.println("guardar " + currentLoan);
+
 		definePayments();
+		buildNewLoan();
 	}
 	
 	public int getCurrentProgress() {
@@ -89,6 +93,7 @@ public class LoanProvider {
 			payments.add(payment);
 		}
 		currentLoan.setPayments(payments);
+		System.out.println(payments);
 	}
 	
 	private void buildNewLoan() { 
