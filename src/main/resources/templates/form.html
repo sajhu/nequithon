@@ -16,27 +16,24 @@
 -->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Spring Boot Heroku Example</title>
+    <title>Pedir Auxilio</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
-   <link rel="stylesheet" type="text/css" href="../static/styles/styles.css"/>
+   <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+   <!-- <link rel="stylesheet" type="text/css" href="../static/styles/styles.css"/> -->
 </head>
 <body>
-<div class="container">
-
-    <div class="row">
-      <div class="col-12">
-        <br/>
-        <h2 class='text-center'>Pide plata a tus ángeles</h2>
-      </div>
-    </div>
-    <div class="spacer-m">
-
-    </div>
+<nav class="navbar text-light bg-medianoche justify-content-between">
+  <p class='text-size-l'><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></p>
+  <p>Pide auxilio</p>
+  <p class='text-size-l'><i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+</nav>
+<div class="container bg-aguamarica">
+    <div class="spacer-m"></div>
     <div class="row">
       <div class="col-12">
         <form>
@@ -52,13 +49,13 @@
               </select>
             </div>
             <div class="form-group col-md-6">
-              <label for="inputAmount">¿Cuánto?</label>
-              <input type="number" class="form-control" id="inputAmount" placeholder="$80.000">
+              <label for="inputAmount">¿Cuánto? (Máx 1'000.000)</label>
+              <input type="number" class="form-control" id="inputAmount" placeholder="$80.000" min="10000" max="1000000">
             </div>
           </div>
           <div class="form-group">
-            <label for="inputLoaners">¿A quién?</label>
-            <input type="text" class="form-control" id="inputLoaners" placeholder="300 5566634">
+            <label for="inputLoaners">¿Quienes son tus desembaladores?</label>
+            <input type="text" class="form-control" id="inputLoaners" placeholder="Busca en tus contactos">
           </div>
           <div class="form-group">
             <label for="inputDeadline">¿Cuándo terminarías de pagar?</label>
@@ -66,11 +63,13 @@
           </div>
           <div class="form-row">
             <div class="form-group col-12">
-              <label for="inputComments">¿Qué sucedió? 😥</label>
+              <label for="inputComments">¿Qué sucedió?</label>
               <input type="text" class="form-control" id="inputComments">
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Pedir plata</button>
+          <div class="spacer-m">
+          </div>
+          <button type="submit" class="btn text-light bg-guayaba btn-lg btn-block">Pedir auxilio</button>
         </form>
       </div>
     </div>
