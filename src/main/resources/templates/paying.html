@@ -23,7 +23,8 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
-   <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
+   <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+
 </head>
 <body>
 <div class="container">
@@ -72,27 +73,26 @@
     <div class="row">
       <div class="col-3">
         <ul class="list-group">
-          <li class="list-group-item list-group-item-success height-large text-size-xs text-center">1 Dic</li>
-          <li class="list-group-item list-group-item-success height-large text-size-xs text-center">2 Dic</li>
-          <li class="list-group-item list-group-item-danger height-large text-size-xs text-center">5 Dic</li>
-          <li class="list-group-item list-group-item-secondary height-large text-size-xs text-center">15 Ene</li>
-          <li class="list-group-item list-group-item-secondary height-large text-size-xs text-center">31 Dic</li>
-          <li class="list-group-item list-group-item-secondary height-large text-size-xs text-center">31 Dic</li>
+          <li class="list-group-item list-group-item-success height-large text-size-xs text-center" ><th:block th:text="${startDate}"></th:block></li>
+          <li class="list-group-item list-group-item-success height-large text-size-xs text-center" ><th:block th:text="${startDate}"></th:block></li>
+          <li class="list-group-item  height-large text-size-xs text-center" 
+          th:each="payment : ${payments}" th:text="${payment.prettyDate}">date</li>
         </ul>
       </div>
       <div class="col-9">
         <ul class="list-group">
           <li href="#" class="list-group-item d-flex justify-content-between align-items-center height-large">Consigue tus ángeles 😇 <span class="badge badge-success badge-pill"><i class="fa fa-check" aria-hidden="true"></i></span></li>
           <li href="#" class="list-group-item d-flex justify-content-between align-items-center height-large">Recibe la plata de tus ángeles <span class="badge badge-success badge-pill"><i class="fa fa-check" aria-hidden="true"></i></span></li>
-          <li href="#" class="list-group-item d-flex justify-content-between align-items-center height-large list-group-item-danger">Logra depositar al menos $30.000 <span class="badge badge-danger badge-pill"><i class="fa fa-warning" aria-hidden="true"></i></span></li>
-          <li href="#" class="list-group-item d-flex justify-content-between align-items-center height-large disabled text-size-l"><i class="fa fa-lock" aria-hidden="true"></i></li>
-          <li href="#" class="list-group-item d-flex justify-content-between align-items-center height-large disabled text-size-l"><i class="fa fa-lock" aria-hidden="true"></i></li>
-          <li href="#" class="list-group-item d-flex justify-content-between align-items-center height-large disabled text-size-l"><i class="fa fa-lock" aria-hidden="true"></i></li>
+          
+          <li class="list-group-item d-flex justify-content-between align-items-center height-large "
+          th:each="milestone : ${currentMilestones}" th:classappend="${milestone.getLeft()}"><th:block th:utext="${milestone.getRight()}"></th:block></li>
           <!-- <a href="#" class="list-group-item height-large disabled">Terminaste! Agradece a tus ángeles 😇</a> -->
         </ul>
       </div>
     </div>
 </div>
+<br />
+<br />
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>

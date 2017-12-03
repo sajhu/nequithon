@@ -1,9 +1,12 @@
-package com.bicimapa.prestamos.repoository;
+package com.bicimapa.prestamos.delegates;
 
+import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
@@ -32,18 +35,33 @@ public class LoanProvider {
 		return getCurrentLoan().getPaid() * 100 / getCurrentLoan().getAmount();
 	}
 	
+	public ArrayList<Pair<String, String>> getCurrentMilestones() {
+		ArrayList<Pair<String, String>> milestones = new ArrayList<>();
+		milestones.add(new ImmutablePair<>("", "Llegaste a la marca <span class=\"badge badge-success badge-pill\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></span>"));
+		milestones.add(new ImmutablePair<>("", "Llegaste a la marca <span class=\"badge badge-success badge-pill\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></span>"));
+		milestones.add(new ImmutablePair<>("list-group-item-danger", "Opsie te falta <span class=\"badge badge-danger badge-pill\"><i class=\"fa fa-warning\" aria-hidden=\"true\"></i></span>"));
+		milestones.add(new ImmutablePair<>("disabled text-size-l", "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"));
+		milestones.add(new ImmutablePair<>("disabled text-size-l", "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"));
+		
+		return milestones;
+	}
+	
 	public void definePayments() {
-		currentLoan.setPeriods((int) Math.ceil((double)loanDays() / 7));
-		ArrayList<Payment> payments = new ArrayList();
+		int loanDuration = loanDays();
+		int interval = loanDuration / 5;
+		currentLoan.setPeriods(5);
+		LocalDate dueDate = LocalDate.now();
+		ArrayList<Payment> payments = new ArrayList<>();
 		int accumulate = 0;
 		for (int i = 0; i < getCurrentLoan().getPeriods(); i++) {
 			int value = currentLoan.getPaymentAmountForPeriod(i);
+			dueDate = dueDate.plusDays(interval);
 			accumulate += value;
 			Payment payment = Payment.builder()
 						.shouldPay(value)
 						.wouldAccumulate(accumulate)
 						.paid(0)
-						.dueDate(ChronoTime.)
+						.dueDate(dueDate)
 						.build();
 			payments.add(payment);
 		}
@@ -62,6 +80,8 @@ public class LoanProvider {
 		currentLoan.setRecipient(recipient);
 		currentLoan.setAmount(100000);
 		currentLoan.setPaid(22000);
+		currentLoan.setCreateDate(LocalDate.now());
+		currentLoan.setFinalDate(LocalDate.now().plusDays(35));
 		
 		definePayments();
 	}
