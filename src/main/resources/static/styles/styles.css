@@ -8,14 +8,17 @@ html, body{
 
 /*Sizes*/
 .height-large{
-	height:14vh;
-	padding-top:5vh;
+	height:12vh;
+	padding-top:4vh;
+}
+.spacer-m{
+	height:2rem;
 }
 
-/*Drawings*/
-span.Dots{
-	background-color: #333;
-	border-radius: 50%;
-	display: absloute;
-	min-height: 4vh;
+/*Text Sizes*/
+.text-size-xs {
+	font-size: 0.8rem;
+}
+.text-size-l {
+	font-size: 1.6rem;
 }
