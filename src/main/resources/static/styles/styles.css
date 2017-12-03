@@ -1,7 +1,21 @@
 
 html, body{
-	font-size:16px;
+	font-size:1rem;
 	color: #1D2222;
 	background-color: #FFF;
 	font-family: 'Varela Round', sans-serif;
+}
+
+/*Sizes*/
+.height-large{
+	height:14vh;
+	padding-top:5vh;
+}
+
+/*Drawings*/
+span.Dots{
+	background-color: #333;
+	border-radius: 50%;
+	display: absloute;
+	min-height: 4vh;
 }
