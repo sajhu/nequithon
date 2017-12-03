@@ -1,4 +1,4 @@
-package com.bicimapa.prestamos.repoository;
+package com.bicimapa.prestamos.delegates;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

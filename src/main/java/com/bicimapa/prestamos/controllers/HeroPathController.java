@@ -7,10 +7,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.bicimapa.prestamos.delegates.LoanProvider;
+import com.bicimapa.prestamos.delegates.Utils;
 import com.bicimapa.prestamos.model.Loan;
 import com.bicimapa.prestamos.model.Stage;
-import com.bicimapa.prestamos.repoository.LoanProvider;
-import com.bicimapa.prestamos.repoository.Utils;
 
 @Controller
 @RequestMapping("/heropath")

@@ -2,7 +2,7 @@ package com.bicimapa.prestamos.model;
 
 import java.time.LocalDate;
 
-import com.bicimapa.prestamos.repoository.Utils;
+import com.bicimapa.prestamos.delegates.Utils;
 
 import lombok.Builder;
 import lombok.Data;
