@@ -1,5 +1,6 @@
 package com.bicimapa.prestamos.controllers;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,7 +14,7 @@ import com.bicimapa.prestamos.repoository.LoanProvider;
 @Controller
 @RequestMapping("/heropath")
 public class HeroPathController {
-
+	private Logger logger = Logger.getLogger(HeroPathController.class);
     private LoanProvider provider;
 
     @Autowired
@@ -32,6 +33,8 @@ public class HeroPathController {
 	    	} else if(Stage.GIVERS_SELECTED.equals(loan.getStage())) {
 	    		return "selected";
 	    	} else if(Stage.PAYING.equals(loan.getStage())) {
+	    		model.addAttribute("progress", provider.getCurrentProgress());
+	    		model.addAttribute("payments", provider.getCurrentLoan().getPayments());
 	    		return "paying";
 	    	} else if(Stage.FINISHED.equals(loan.getStage())) {
 	    		return "finished";
@@ -42,6 +45,7 @@ public class HeroPathController {
     @RequestMapping(path="/delete", method = RequestMethod.GET)
     public void deleteProgress() {
     		provider.setCurrentLoan(null);
+    		logger.info("reseteamos todo");
     }
 
 }

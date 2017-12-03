@@ -1,5 +1,6 @@
 package com.bicimapa.prestamos.model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import lombok.Data;
@@ -16,11 +17,18 @@ public class Loan {
 	
 	private int amount;
 	
+	private int paid;
+	
+	private LocalDate createDate;
+	
+	private LocalDate finalDate;
+	
+	private int periods;
+	
+	private List<Payment> payments;
+	
 	public int getPaymentAmountForPeriod(int period) {
-		return 2 * period * amount / (getPeriods() * (getPeriods() + 1));
+		return 2 * period * amount / (periods * (periods + 1));
 	}
 	
-	public int getPeriods() {
-		return givers.size();
-	}
 }
