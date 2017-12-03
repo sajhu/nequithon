@@ -16,14 +16,14 @@
 -->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Spring Boot Heroku Example</title>
+    <title>Pedir Desembare</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
-   <link rel="stylesheet" type="text/css" href="../static/styles/styles.css"/>
+   <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
 </head>
 <body>
 <div class="container">
@@ -39,35 +39,31 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <form>
+        <form method="post" th:object="${loanCreation}">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputReason">¿Por qué?</label>
-              <select id="inputReason" class="form-control">
-                <option selected>Completar matrícula</option>
-                <option>Emergencia médica</option>
-                <option>Pagar arriendo</option>
-                <option>Pagar servicios</option>
-                <option>Otro</option>
-              </select>
+              <select id="inputReason" class="form-control" th:field="*{reason}">
+              	<option th:each="reason : ${reasons}" th:value="${reason}" th:text="${reason}">?</option>
+            </select>
             </div>
             <div class="form-group col-md-6">
               <label for="inputAmount">¿Cuánto?</label>
-              <input type="number" class="form-control" id="inputAmount" placeholder="$80.000">
+              <input type="number" class="form-control" id="inputAmount" placeholder="$80.000" th:field="*{amount}" />
             </div>
           </div>
           <div class="form-group">
             <label for="inputLoaners">¿A quién?</label>
-            <input type="text" class="form-control" id="inputLoaners" placeholder="300 5566634">
+            <input type="text" class="form-control" id="inputLoaners" placeholder="300 5566634" />
           </div>
           <div class="form-group">
             <label for="inputDeadline">¿Cuándo terminarías de pagar?</label>
-            <input type="date" class="form-control" id="inputDeadline" placeholder="Toca para seleccionar una fecha">
+            <input type="date" class="form-control" id="inputDeadline" placeholder="Toca para seleccionar una fecha" th:value="*{finalDate}" th:field="*{finalDate}" />
           </div>
           <div class="form-row">
             <div class="form-group col-12">
               <label for="inputComments">¿Qué sucedió? 😥</label>
-              <input type="text" class="form-control" id="inputComments">
+              <input type="text" class="form-control" id="inputComments" th:field="*{story}" />
             </div>
           </div>
           <button type="submit" class="btn btn-primary btn-block">Pedir plata</button>

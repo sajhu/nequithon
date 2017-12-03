@@ -10,4 +10,8 @@ public class Utils {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMM", new Locale("es", "CO"));
 		return date.format(formatter).toUpperCase();
 	}
+	
+	public static String getPrettyAmount(int amount) {
+		return "$" + String.format("%.d", amount);
+	}
 }

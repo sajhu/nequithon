@@ -38,6 +38,8 @@ public class HeroPathController {
 	    		model.addAttribute("payments", provider.getCurrentLoan().getPayments());
 	    		model.addAttribute("startDate", Utils.getPrettyDate(provider.getCurrentLoan().getCreateDate()));
 	    		model.addAttribute("currentMilestones", provider.getCurrentMilestones());
+	    		model.addAttribute("paid", Utils.getPrettyAmount(provider.getCurrentLoan().getPaid()));
+	    		model.addAttribute("amount", Utils.getPrettyAmount(provider.getCurrentLoan().getAmount()));
 	    		
 	    		return "paying";
 	    	} else if(Stage.FINISHED.equals(loan.getStage())) {
