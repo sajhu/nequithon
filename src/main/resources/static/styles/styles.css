@@ -1,8 +1,8 @@
 
 html, body{
 	font-size:1rem;
-	color: #1D2222;
-	background-color: #FFF;
+	color: #210049;
+	background-color: #c8f7f3;
 	font-family: 'Varela Round', sans-serif;
 }
 
@@ -14,11 +14,42 @@ html, body{
 .spacer-m{
 	height:2rem;
 }
+.spacer-xs{
+	height:0.1rem
+}
 
-/*Text Sizes*/
+.img-badge{
+	height:3rem;
+	width:auto;
+	display: block;
+  margin: 0 auto;
+}
+
+/*Text-size*/
 .text-size-xs {
 	font-size: 0.8rem;
 }
 .text-size-l {
 	font-size: 1.6rem;
+}
+/*Text-size*/
+.text-medianoche {
+	color: #210049;
+}
+
+/*Backgrounds*/
+.bg-medianoche {
+	background-color: #210049;
+}
+.bg-aguamarica {
+	background-color: #c8f7f3;
+}
+.bg-guayaba {
+	background-color: #ff2f73;
+}
+.box-shadow{
+	box-shadow: 1px 1px 1px #2fcad7;
+}
+.no-border{
+	border: none;
 }
