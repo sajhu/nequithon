@@ -11,6 +11,9 @@ html, body{
 	height:12vh;
 	padding-top:4vh;
 }
+.spacer-m{
+	height:2rem;
+}
 
 /*Text Sizes*/
 .text-size-xs {

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<!--
+  Copyright 2015 Benedikt Ritter
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Heroku Example</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
+   <link rel="stylesheet" type="text/css" href="../static/styles/styles.css"/>
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+      <div class="col-12">
+        <br/>
+        <h2 class='text-center'>Pide plata a tus ángeles</h2>
+      </div>
+    </div>
+    <div class="spacer-m">
+
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputReason">¿Por qué?</label>
+              <select id="inputReason" class="form-control">
+                <option selected>Completar matrícula</option>
+                <option>Emergencia médica</option>
+                <option>Pagar arriendo</option>
+                <option>Pagar servicios</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAmount">¿Cuánto?</label>
+              <input type="number" class="form-control" id="inputAmount" placeholder="$80.000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputLoaners">¿A quién?</label>
+            <input type="text" class="form-control" id="inputLoaners" placeholder="300 5566634">
+          </div>
+          <div class="form-group">
+            <label for="inputDeadline">¿Cuándo terminarías de pagar?</label>
+            <input type="date" class="form-control" id="inputDeadline" placeholder="Toca para seleccionar una fecha">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="inputComments">¿Qué sucedió? 😥</label>
+              <input type="text" class="form-control" id="inputComments">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Pedir plata</button>
+        </form>
+      </div>
+    </div>
+</div>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>
