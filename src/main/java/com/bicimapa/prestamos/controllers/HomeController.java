@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.heroku.demo;
+package com.bicimapa.prestamos.controllers;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -25,6 +25,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.bicimapa.prestamos.Record;
+import com.bicimapa.prestamos.repoository.RecordRepository;
 
 @Controller
 @RequestMapping("/")

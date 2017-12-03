@@ -18,9 +18,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.britter</groupId>
-    <artifactId>spring-boot-heroku-demo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>com.bicimapa</groupId>
+    <artifactId>prestamos</artifactId>
+    <version>0.0.1</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -60,6 +60,16 @@
             <artifactId>liquibase-core</artifactId>
             <version>3.4.1</version>
         </dependency>
+        <!-- H2 Database -->
+		 <dependency>
+			 <groupId>com.h2database</groupId>
+			 <artifactId>h2</artifactId>
+		 </dependency>
+		 <dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		</dependency>
+
     </dependencies>
 
     <properties>

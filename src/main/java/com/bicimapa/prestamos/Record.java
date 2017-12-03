@@ -1,4 +1,4 @@
-package com.heroku.demo;
+package com.bicimapa.prestamos;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
