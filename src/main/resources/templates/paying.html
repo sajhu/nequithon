@@ -28,7 +28,7 @@
 </head>
 <body>
 <nav class="navbar text-light bg-medianoche justify-content-between">
-  <p class='text-size-l'><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></p>
+  <a href="/" class='text-size-l text-white'><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
   <p>Tu auxilio</p>
   <p class='text-size-l'><i class="fa fa-chevron-down" aria-hidden="true"></i></p>
 </nav>
@@ -40,6 +40,9 @@
         <br/>
         <div class="row">
           <div class="col-12">
+          	<h2 class="text-center" th:text="${reason}"></h2>
+          	<i class="text-center" th:text="${story}"></i>
+          	<br />
             <p class='text-center'>Abona <span>$2.000</span> hoy para no colgarte! </p>
             <!-- <p class='text-center'> ¡Vas <span>$10.000</span> adelante de la meta! 💪</p> -->
           </div>

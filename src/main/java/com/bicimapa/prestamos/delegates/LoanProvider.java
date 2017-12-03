@@ -44,6 +44,8 @@ public class LoanProvider {
 		Person giver3 = Person.builder().name("Mamuel").phone("3011234567").build();
 		
 		currentLoan = new Loan();
+		currentLoan.setReason(loanCreation.getReason());
+		currentLoan.setStory(loanCreation.getStory());
 		currentLoan.setGivers(Arrays.asList(giver1, giver2, giver3));
 		currentLoan.setStage(Stage.PAYING);
 		currentLoan.setRecipient(recipient);
@@ -64,7 +66,7 @@ public class LoanProvider {
 		milestones.add(new ImmutablePair<>("", "Conseguiste los "+ Utils.getPrettyAmount(currentLoan.getPayments().get(0).getShouldPay()) +" <span class=\"badge badge-success badge-pill\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></span>"));
 		milestones.add(new ImmutablePair<>("", "Conseguiste los "+ Utils.getPrettyAmount(currentLoan.getPayments().get(1).getShouldPay()) +" <span class=\"badge badge-success badge-pill\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></span>"));
 		milestones.add(new ImmutablePair<>("list-group-item-danger", "Recarga "+ Utils.getPrettyAmount(currentLoan.getPayments().get(2).getMissing()) +" para llegar a cumplir este reto <span class=\"badge badge-danger badge-pill\"><i class=\"fa fa-warning\" aria-hidden=\"true\"></i></span>"));
-		milestones.add(new ImmutablePair<>("disabled text-size-l", "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i> Termina el reto anterior para desbloquear"));
+		milestones.add(new ImmutablePair<>("disabled", "<i class=\"fa fa-lock text-size-l\" aria-hidden=\"true\"></i> Termina el reto anterior para desbloquear"));
 		milestones.add(new ImmutablePair<>("disabled text-size-l", "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i>"));
 		
 		return milestones;

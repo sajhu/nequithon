@@ -8,6 +8,9 @@ import lombok.Data;
 @Data
 public class Loan {
 
+	private String reason;
+	
+	private String story;
 	
 	private Person recipient;
 	
